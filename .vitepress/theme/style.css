@@ -1,0 +1,40 @@
+:root {
+  --vp-c-bg: #fff;
+}
+
+.dark {
+  --vp-c-bg: #111;
+}
+
+:root {
+  text-rendering: optimizeLegibility;
+
+  /* 平滑滚动 */
+  scroll-behavior: smooth;
+
+  /* 滚动条 */
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-default-2) transparent;
+}
+
+/* a */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* .vp-doc */
+
+.vp-doc a {
+  font-weight: normal;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-text-1);
+}

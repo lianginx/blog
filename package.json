@@ -1,0 +1,23 @@
+{
+  "name": "vitepress-custom-theme",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "build:deploy": "npm run build && wrangler pages deploy .vitepress/dist",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "dependencies": {
+    "markdown-it-textual-uml": "^0.17.1",
+    "unocss": "^66.6.7",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.30"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^7.7.3",
+    "@unocss/eslint-plugin": "^66.6.6",
+    "eslint": "^10.0.3"
+  }
+}
