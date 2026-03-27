@@ -1,5 +1,5 @@
 {
-  "name": "vitepress-custom-theme",
+  "name": "blog-v2",
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
