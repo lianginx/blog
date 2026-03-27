@@ -7,7 +7,7 @@ const { theme } = useData<ThemeConfig>()
 
 <template>
   <div class="grid gap-6">
-    <ListBlog show-title :limit="theme.blog?.homeLimit ?? 14" />
+    <ListBlog show-title :limit="theme.blog?.homeLimit ?? 12" />
     <PhotoSection />
   </div>
 </template>
