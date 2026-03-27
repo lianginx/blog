@@ -7,8 +7,6 @@
 }
 
 :root {
-  text-rendering: optimizeLegibility;
-
   /* 平滑滚动 */
   scroll-behavior: smooth;
 
@@ -16,6 +14,10 @@
   scrollbar-gutter: stable;
   scrollbar-width: thin;
   scrollbar-color: var(--vp-c-default-2) transparent;
+}
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 /* a */
