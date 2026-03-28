@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 import type { BlogItem } from '../types/theme'
 import { computed, ref } from 'vue'
-// @ts-expect-error vitepress 运行时导出 data
-import { data } from '../../../docs/blog.data'
+import { data } from '../data/blog.data'
 
 const props = defineProps<{
   showTitle?: boolean
@@ -14,9 +13,13 @@ const keywords = ref('')
 
 const blogs = computed<BlogItem[]>(
   () => {
-    let nextData = data as BlogItem[]
+    let nextData = data
     if (keywords.value) {
-      nextData = nextData.filter((item: Record<string, any>) => item.frontmatter.title.toLowerCase().includes(keywords.value))
+      nextData = nextData.filter((item: Record<string, any>) =>
+        item.frontmatter.title
+          .toLowerCase()
+          .includes(keywords.value),
+      )
     }
     return nextData.slice(0, props.limit)
   },

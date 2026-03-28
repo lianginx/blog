@@ -1,15 +1,22 @@
 <script lang="ts" setup>
-import type { ThemeConfig } from '../types/theme'
-import { useData } from 'vitepress'
-import { computed } from 'vue'
+import type { CSSProperties } from 'vue'
+import { blurhashToGradientCssObject } from '@unpic/placeholder'
+import { usePreviewImg } from '../components/dialog/usePreviewImg'
+import { data } from '../data/photos.data'
 
-const { theme } = useData<ThemeConfig>()
-
-const photos = computed(() => theme.value.photo?.items ?? [])
+const { show } = usePreviewImg()
 </script>
 
 <template>
   <div class="grid grid-cols-3 gap-2">
-    <PhotoImage v-for="item in photos" :key="item.src" class="image" :src="item.src" />
+    <div v-for="item, i in data" :key="item.src">
+      <img
+        class="w-full aspect-square object-cover"
+        :src="item.src"
+        :style="item.blurhash ? blurhashToGradientCssObject(item.blurhash) as CSSProperties : undefined"
+        loading="lazy"
+        @click="show(data.map(o => o.src), i)"
+      >
+    </div>
   </div>
 </template>

@@ -1,7 +1,5 @@
 export interface ThemeConfig {
   nav?: NavItem[]
-  blog?: BlogConfig
-  photo?: PhotoConfig
   footbar?: FootbarConfig
 }
 
@@ -9,10 +7,6 @@ export interface NavItem {
   title: string
   link: string
   activeMatch?: string
-}
-
-export interface BlogConfig {
-  homeLimit?: number
 }
 
 export interface BlogItem {
@@ -23,17 +17,6 @@ export interface BlogItem {
   }
 }
 
-export interface PhotoConfig {
-  base: string
-  homeLimit?: number
-  items?: PhotoItem[]
-}
-
-export interface PhotoItem {
-  src: string
-  date: string
-}
-
 export interface FootbarConfig {
   showVitePress: boolean
   items?: FootbarItem[]
@@ -42,4 +25,10 @@ export interface FootbarConfig {
 export interface FootbarItem {
   title: string
   link?: string
+}
+
+export interface PhotoItem {
+  src: string
+  date: string
+  blurhash?: string
 }

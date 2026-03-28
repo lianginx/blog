@@ -1,7 +1,9 @@
 <script lang="ts" setup>
-import type { ThemeConfig } from '../types/theme'
-import { useData } from 'vitepress'
+import type { CSSProperties } from 'vue'
+import { blurhashToGradientCssObject } from '@unpic/placeholder'
 import { computed } from 'vue'
+import { data } from '../data/photos.data'
+import { usePreviewImg } from './dialog/usePreviewImg'
 
 withDefaults(
   defineProps<{
@@ -12,22 +14,27 @@ withDefaults(
   },
 )
 
-const { theme } = useData<ThemeConfig>()
+const photoItems = computed(() => data.slice(0, 4))
 
-const limit = computed(() => theme.value.blog?.homeLimit ?? 4)
-const photos = computed(() => theme.value.photo?.items?.slice(0, limit.value) ?? [])
+const { show } = usePreviewImg()
 </script>
 
 <template>
   <div class="grid gap-3">
     <div v-if="showTitle">
-      <a class="font-bold" :href="theme.photo?.base">Photos</a>
+      <a class="font-bold" href="/photos">Photos</a>
       <span> ——</span>
     </div>
-    <div
-      class="imgs grid grid-cols-4 gap-2"
-    >
-      <PhotoImage v-for="item in photos" :key="item.src" :src="item.src" />
+    <div class="imgs grid grid-cols-4 gap-2">
+      <img
+        v-for="item, i in photoItems"
+        :key="item.src"
+        class="w-full aspect-square object-cover"
+        :src="item.src"
+        :style="item.blurhash ? blurhashToGradientCssObject(item.blurhash) as CSSProperties : undefined"
+        loading="lazy"
+        @click="show(photoItems.map(o => o.src), i)"
+      >
     </div>
   </div>
 </template>

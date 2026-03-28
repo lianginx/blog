@@ -5,19 +5,24 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "build:deploy": "npm run build && wrangler pages deploy .vitepress/dist",
+    "build:deploy": "npm run build && wrangler pages deploy .vitepress/dist --project-name=blog-v2",
+    "build:deploy:preview": "npm run build && wrangler pages deploy .vitepress/dist --project-name=blog-v2 --branch=preview",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "markdown-it-textual-uml": "^0.17.1",
     "unocss": "^66.6.7",
-    "vitepress": "^1.6.4",
+    "vitepress": "^2.0.0-alpha.17",
     "vue": "^3.5.30"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.7.3",
+    "@types/node": "^22.15.3",
     "@unocss/eslint-plugin": "^66.6.6",
-    "eslint": "^10.0.3"
+    "@unpic/placeholder": "^0.1.2",
+    "blurhash": "^2.0.5",
+    "eslint": "^10.0.3",
+    "sharp": "^0.33.5"
   }
 }

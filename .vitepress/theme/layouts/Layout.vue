@@ -13,5 +13,6 @@ const { frontmatter } = useData()
     </main>
     <FootBar />
     <BackTop />
+    <DialogPreviewImg />
   </div>
 </template>
