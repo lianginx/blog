@@ -12,6 +12,7 @@ import IconTop from './components/icon/top.vue'
 import ListBlog from './components/ListBlog.vue'
 import ListPhoto from './components/ListPhoto.vue'
 import NavBar from './components/NavBar.vue'
+import NotFound from './components/NotFound.vue'
 import PhotoSection from './components/PhotoSection.vue'
 import SquareTag from './components/SquareTag.vue'
 import CustomLayout from './layouts/Layout.vue'
@@ -38,5 +39,6 @@ export default {
       .component('IconSearch', IconSearch)
       .component('IconTop', IconTop)
       .component('DialogPreviewImg', DialogPreviewImg)
+      .component('NotFound', NotFound)
   },
 } satisfies Theme
