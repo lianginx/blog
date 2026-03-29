@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
-    "build": "vitepress build",
+    "build": "eslint --fix && vitepress build",
     "preview": "vitepress preview",
     "build:deploy": "npm run build && wrangler pages deploy .vitepress/dist --project-name=blog-v2",
     "build:deploy:preview": "npm run build && wrangler pages deploy .vitepress/dist --project-name=blog-v2 --branch=preview",
