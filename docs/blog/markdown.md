@@ -1,6 +1,7 @@
 ---
 title: "Markdown 入门手册"
 date: "2022-11-28"
+description: "全面的Markdown基础语法入门手册，帮助初学者快速掌握标题、段落、列表、代码块等常用格式化技巧。"
 tags:
   - markdown
   - note

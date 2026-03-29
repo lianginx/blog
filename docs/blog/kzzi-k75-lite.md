@@ -1,6 +1,7 @@
 ---
 title: "珂芝（Kzzi）K75 Lite 说明书"
 date: "2025-11-14"
+description: "珂芝K75 Lite键盘使用指南，掌握电量查看、蓝牙配对、背光调节及Win/Mac系统切换等快捷键操作方法。"
 tags:
   - 键盘
   - 硬件

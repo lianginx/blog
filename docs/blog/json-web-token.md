@@ -1,6 +1,7 @@
 ---
 title: "JSON Web Token 鉴权"
 date: "2023-12-04"
+description: "JWT鉴权原理深度解析，详解Token签名生成与验证机制，结合Nuxt 3项目实践完整的用户身份认证流程。"
 tags:
   - jwt
   - auth

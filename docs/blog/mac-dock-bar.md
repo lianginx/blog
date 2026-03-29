@@ -1,6 +1,7 @@
 ---
 title: "Mac Dock Bar 易用性调整"
 date: "2023-06-17"
+description: "通过终端命令优化macOS Dock栏体验，自定义自动隐藏延迟与动画速度，提升应用切换效率与操作流畅度。"
 tags:
   - macos
   - 技巧

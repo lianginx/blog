@@ -1,6 +1,7 @@
 ---
 title: "NSSM 使用说明"
 date: "2025-11-04"
+description: "学习使用NSSM将普通程序注册为Windows系统服务的方法，实现开机自启和后台运行。"
 tags:
   - windows
   - 服务

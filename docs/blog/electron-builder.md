@@ -1,6 +1,7 @@
 ---
 title: "如何使用 Electron 打包网站项目"
 date: "2022-11-28"
+description: "使用Electron和electron-builder打包网站项目为桌面应用的完整教程，包含环境配置、项目设置与窗口自定义方法。"
 tags:
   - electron
 ---

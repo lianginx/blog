@@ -1,6 +1,7 @@
 ---
 title: "NPM 配置文件 `.npmrc`"
 date: "2022-11-28"
+description: "深入解析NPM配置文件.npmrc的使用方法，包括配置位置、镜像源设置和依赖管理优化。"
 tags:
   - npm
   - nodejs

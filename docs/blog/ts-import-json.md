@@ -1,6 +1,7 @@
 ---
 title: "TypeScript 项目中使用 import 导入 JSON 文件"
 date: "2022-11-28"
+description: "解决TypeScript项目中导入JSON文件的常见问题，通过配置tsconfig实现JSON模块解析。"
 tags:
   - typescript
   - json

@@ -1,6 +1,7 @@
 ---
 title: "Keychron K2 键盘使用说明"
 date: "2022-11-28"
+description: "Keychron K2机械键盘使用说明书，详解蓝牙配对、三设备切换、背光效果调节及省电模式等核心功能操作。"
 tags:
   - 键盘
   - 硬件

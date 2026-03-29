@@ -1,6 +1,7 @@
 ---
 title: "快速查询 Mac 磁盘信息"
 date: "2025-03-11"
+description: "掌握使用smartmontools工具快速查询Mac磁盘健康信息的方法，包括温度、读写量、通电时间等关键指标。"
 tags:
   - macos
   - 技巧

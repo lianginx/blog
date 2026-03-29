@@ -1,6 +1,7 @@
 ---
 title: "macOS Launchd 入门"
 date: "2026-03-04"
+description: "学习macOS Launchd系统服务管理工具的入门指南，掌握配置文件语法、目录结构和常用命令，实现后台服务的自动化管理。"
 tags:
   - macos
   - 系统

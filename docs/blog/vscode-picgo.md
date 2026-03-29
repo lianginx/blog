@@ -1,6 +1,7 @@
 ---
 title: "Visoul Studio Code 图床扩展 PicGo 配置"
 date: "2022-11-28"
+description: "在VS Code中配置PicGo图床扩展的完整教程，实现Markdown文档图片的便捷上传和管理。"
 tags:
   - vscode
   - picgo

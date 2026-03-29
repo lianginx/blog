@@ -1,6 +1,7 @@
 ---
 title: "本地存储：localStorage 和 sessionStorage 的差异"
 date: "2023-03-05"
+description: "localStorage与sessionStorage差异详解，对比存储时效、作用域与使用场景，掌握前端本地存储最佳实践方案。"
 tags:
   - javascript
   - 前端
