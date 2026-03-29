@@ -10,7 +10,7 @@ export default defineConfig<ThemeConfig>({
   srcDir: 'docs',
   lang: 'zh-CN',
   lastUpdated: true,
-  sitemap: { hostname: 'https://blog.in-x.cc' },
+  sitemap: { hostname: 'https://in-x.cc' },
   markdown: {
     config: (md) => { md.use(markdownItTextualUml) },
   },
