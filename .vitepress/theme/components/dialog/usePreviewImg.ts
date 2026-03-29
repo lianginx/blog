@@ -3,7 +3,7 @@ import { computed, onMounted, ref } from 'vue'
 const imgs = ref<string[]>([])
 const index = ref(0)
 
-const currentImg = computed(() => imgs.value[index.value])
+const currentImg = computed(() => imgs.value[index.value] ?? '')
 const isFirst = computed(() => index.value === 0)
 const isLast = computed(() => index.value === imgs.value.length - 1)
 

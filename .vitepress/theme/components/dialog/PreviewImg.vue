@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { withBase } from 'vitepress'
 import { usePreviewImg } from './usePreviewImg'
 
 const { currentImg, isFirst, isLast, prev, next, close } = usePreviewImg()
@@ -22,7 +23,7 @@ const { currentImg, isFirst, isLast, prev, next, close } = usePreviewImg()
           &lsaquo;
         </div>
         <div class="h-90svh w-70svw flex items-center justify-center" @click.self="close">
-          <img class="h-full max-h-fit object-contain" :src="currentImg">
+          <img class="h-full max-h-fit object-contain" :src="withBase(currentImg)">
         </div>
         <div
           class="absolute right-0 text-6xl cursor-pointer"

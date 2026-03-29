@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { BlogItem } from '../types/theme'
+import { withBase } from 'vitepress'
 import { computed, ref } from 'vue'
 import { data } from '../data/blog.data'
 
@@ -33,7 +34,7 @@ function clear() {
 <template>
   <div class="grid gap-2">
     <div v-if="showTitle">
-      <a class="font-bold" href="/blog">Blog</a>
+      <a class="font-bold" :href="withBase('/blog')">Blog</a>
       <span> ——</span>
     </div>
     <div v-if="showSearch" class="flex items-center gap-2 h-6">
@@ -47,7 +48,9 @@ function clear() {
       v-for="{ url, frontmatter } in blogs" :key="url"
       class="flex flex-col md:flex-row justify-between gap-1"
     >
-      <a :href="url" class="flex-1 line-clamp-2 md:line-clamp-1">{{ frontmatter.title }}</a>
+      <a :href="withBase(url)" class="flex-1 line-clamp-2 md:line-clamp-1">
+        {{ frontmatter.title }}
+      </a>
       <div class="font-[BlinkMacSystemFont] tabular-nums text-[--vp-c-text-3] md:text-[--vp-c-text-1]">
         {{ frontmatter.date }}
       </div>
