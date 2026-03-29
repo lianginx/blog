@@ -4,4 +4,7 @@ export default antfu({
   unocss: true,
   vue: true,
   typescript: true,
+  rules: {
+    'e18e/prefer-static-regex': 'off',
+  },
 })
