@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ArrowUpFromLineIcon } from '@lucide/vue'
 import { onMounted, onUnmounted, ref } from 'vue'
 
 const isShow = ref(false)
@@ -37,6 +38,6 @@ onUnmounted(() => {
     tabindex="0"
     @click="scrollToTop"
   >
-    <IconTop :size="18" />
+    <ArrowUpFromLineIcon class="text-[--vp-c-text-3]" :size="18" />
   </div>
 </template>

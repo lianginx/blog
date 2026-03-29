@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { BlogItem } from '../types/theme'
+import { CircleXIcon, SearchIcon } from '@lucide/vue'
 import { withBase } from 'vitepress'
 import { computed, ref } from 'vue'
 import { data } from '../data/blog.data'
@@ -38,19 +39,19 @@ function clear() {
       <span> ——</span>
     </div>
     <div v-if="showSearch" class="flex items-center gap-2 h-6">
-      <button v-if="keywords" @click="clear">
-        <IconClose :size="16" />
-      </button>
-      <IconSearch :size="16" />
+      <div class="text-[--vp-c-text-3]">
+        <CircleXIcon v-if="keywords" class="cursor-pointer" :size="16" @click="clear" />
+        <SearchIcon v-else :size="16" />
+      </div>
       <input v-model.trim="keywords" class="flex-1 text-sm" placeholder="Search...">
     </div>
     <div
       v-for="{ url, frontmatter } in blogs" :key="url"
-      class="flex flex-col md:flex-row justify-between gap-1"
+      class="flex flex-col md:flex-row justify-between gap-1 md:gap-4"
     >
-      <a :href="withBase(url)" class="flex-1 line-clamp-2 md:line-clamp-1">
-        {{ frontmatter.title }}
-      </a>
+      <div class="flex-1 line-clamp-2 md:line-clamp-1">
+        <a :href="withBase(url)">{{ frontmatter.title }}</a>
+      </div>
       <div class="font-[BlinkMacSystemFont] tabular-nums text-[--vp-c-text-3] md:text-[--vp-c-text-1]">
         {{ frontmatter.date }}
       </div>
