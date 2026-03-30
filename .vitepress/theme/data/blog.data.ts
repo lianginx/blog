@@ -1,4 +1,4 @@
-import type { BlogItem } from '../types/theme'
+import type { BlogItem } from '#types/theme'
 import { createContentLoader } from 'vitepress'
 
 declare const data: BlogItem[]

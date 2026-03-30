@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import { usePreviewImg } from '#components/dialog/usePreviewImg'
 import { ChevronLeftIcon, ChevronRightIcon } from '@lucide/vue'
 import { withBase } from 'vitepress'
-import { usePreviewImg } from './usePreviewImg'
 
 const { currentImg, isFirst, isLast, prev, next, close } = usePreviewImg()
 </script>

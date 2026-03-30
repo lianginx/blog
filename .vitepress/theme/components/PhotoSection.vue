@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import type { CSSProperties } from 'vue'
+import { usePreviewImg } from '#components/dialog/usePreviewImg'
+import { data } from '#data/photos.data'
 import { blurhashToGradientCssObject } from '@unpic/placeholder'
 import { withBase } from 'vitepress'
 import { computed } from 'vue'
-import { data } from '../data/photos.data'
-import { usePreviewImg } from './dialog/usePreviewImg'
 
 withDefaults(
   defineProps<{

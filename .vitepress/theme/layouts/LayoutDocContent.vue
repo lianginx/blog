@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ThemeConfig } from '../types/theme'
+import type { ThemeConfig } from '#types/theme'
 import { useData } from 'vitepress'
 
 const { frontmatter } = useData<ThemeConfig>()

@@ -1,13 +1,13 @@
+import type { NavItem, ThemeConfig } from '#types/theme'
+import type { IRaw } from '#utils/generateRss'
 import type { PageData, SiteConfig } from 'vitepress'
-import type { NavItem, ThemeConfig } from './theme/types/theme'
-import type { IRaw } from './theme/utils/generateRss'
 import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-// @ts-expect-error vitepress is not typed
+import { generateRss } from '#utils/generateRss'
 import markdownItTextualUml from 'markdown-it-textual-uml'
 import UnoCSS from 'unocss/vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 import { defineConfig } from 'vitepress'
-import { generateRss } from './theme/utils/generateRss'
 
 const SITE_URL = 'https://in-x.cc'
 
@@ -21,7 +21,12 @@ export default defineConfig<ThemeConfig>({
   markdown: {
     config: (md) => { md.use(markdownItTextualUml) },
   },
-  vite: { plugins: [UnoCSS()] },
+  vite: {
+    plugins: [
+      UnoCSS(),
+      tsconfigPaths({ loose: true }),
+    ],
+  },
   transformPageData(pageData) {
     transformToRaw(pageData)
   },

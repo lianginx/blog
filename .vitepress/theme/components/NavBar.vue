@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { NavItem, ThemeConfig } from '../types/theme'
+import type { NavItem, ThemeConfig } from '#types/theme'
 import { RssIcon } from '@lucide/vue'
 import { useData, useRoute, withBase } from 'vitepress'
 

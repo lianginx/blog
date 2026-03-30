@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { BlogItem } from '../types/theme'
+import type { BlogItem } from '#types/theme'
+import { data } from '#data/blog.data'
 import { CircleXIcon, SearchIcon } from '@lucide/vue'
 import { withBase } from 'vitepress'
 import { computed, ref } from 'vue'
-import { data } from '../data/blog.data'
 
 const props = defineProps<{
   showTitle?: boolean
