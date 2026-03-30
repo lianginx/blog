@@ -16,7 +16,7 @@ function isActive(item: NavItem) {
 <template>
   <div class="md:absolute md:-ml-36 b-b b-b-solid b-b-[--vp-c-divider] md:b-none pb-6 mb-6 md:pb-0 md:mb-6 grid gap-2">
     <div>
-      <a class="font-bold !inline" :href="withBase('/')">
+      <a class="font-bold" :href="withBase('/')">
         {{ site.title }}
       </a>
     </div>
@@ -29,7 +29,7 @@ function isActive(item: NavItem) {
         {{ item.title }}
       </a>
     </div>
-    <div class="mt-0.5">
+    <div class="flex mt-0.5">
       <a :href="withBase('/rss.xml')" alt="RSS 订阅" target="_blank">
         <RssIcon class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1]" :size="16" :stroke-width="3" />
       </a>
