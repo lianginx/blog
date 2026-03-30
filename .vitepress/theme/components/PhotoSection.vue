@@ -30,7 +30,7 @@ const { show } = usePreviewImg()
       <img
         v-for="item, i in photoItems"
         :key="item.src"
-        class="w-full aspect-square object-cover"
+        class="w-full aspect-square object-cover cursor-zoom-in"
         :src="withBase(item.src)"
         :style="item.blurhash ? blurhashToGradientCssObject(item.blurhash) as CSSProperties : undefined"
         loading="lazy"
