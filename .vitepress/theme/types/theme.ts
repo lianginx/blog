@@ -1,6 +1,13 @@
 export interface ThemeConfig {
-  nav?: NavItem[]
+  nav?: NavConfig
   footbar?: FootbarConfig
+}
+
+export interface NavConfig {
+  items?: NavItem[]
+  github?: string
+  x?: string
+  mastodon?: string
 }
 
 export interface NavItem {

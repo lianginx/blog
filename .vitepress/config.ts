@@ -34,21 +34,25 @@ export default defineConfig<ThemeConfig>({
     rss(siteConfig)
   },
   themeConfig: {
-    nav: nav(),
+    nav: {
+      items: navItems(),
+      github: 'https://github.com/lianginx',
+      mastodon: 'https://elk.zone/m.cmx.im/@lianginx',
+      x: 'https://x.com/Niujunliang',
+    },
     footbar: {
       showVitePress: true,
       items: [
-        { title: 'GitHub', link: 'https://github.com/lianginx' },
-        { title: 'X/Twitter', link: 'https://x.com/Niujunliang' },
         { title: `2021-${new Date().getFullYear()} © Liang` },
       ],
     },
   },
 })
 
-function nav(): NavItem[] {
+function navItems(): NavItem[] {
   return [
     { title: 'Blog', link: '/blog', activeMatch: '/blog/' },
+    { title: 'Projects', link: '/projects' },
     { title: 'Photos', link: '/photos', activeMatch: '/photos/' },
   ]
 }
