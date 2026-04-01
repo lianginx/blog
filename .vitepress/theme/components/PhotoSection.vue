@@ -21,7 +21,7 @@ const { show } = usePreviewImg()
 </script>
 
 <template>
-  <div class="grid gap-3">
+  <div class="grid gap-2">
     <div v-if="showTitle">
       <a class="font-bold" :href="withBase('/photos')">Photos</a>
       <span> ——</span>

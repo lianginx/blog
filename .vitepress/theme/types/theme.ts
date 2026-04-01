@@ -1,5 +1,6 @@
 export interface ThemeConfig {
   nav?: NavConfig
+  projects?: ProjectsConfig
   footbar?: FootbarConfig
 }
 
@@ -14,6 +15,22 @@ export interface NavItem {
   title: string
   link: string
   activeMatch?: string
+}
+
+export interface ProjectsConfig {
+  items?: ProjectItem[]
+}
+
+export interface ProjectItem {
+  title: string
+  description: string
+  links: ProjectLink[]
+  tag: string
+}
+
+export interface ProjectLink {
+  type: 'github' | 'npm' | 'home'
+  url: string
 }
 
 export interface BlogItem {
