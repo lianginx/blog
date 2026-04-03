@@ -61,6 +61,14 @@ function navItems(): NavItem[] {
 function projectItems(): ProjectItem[] {
   return [
     {
+      title: 'jd-product-unit-price',
+      description: '在京东购物车页面自动识别猫粮、大米、小米等粮食类商品，并根据标题中的重量信息计算单价，便于横向比较不同商品的价格。',
+      tag: '浏览器脚本',
+      links: [
+        { type: 'github', url: 'https://github.com/lianginx/browser-script/tree/master/jd-product-unit-price' },
+      ],
+    },
+    {
       title: 'homebrew-search',
       description: '简洁美观的 Homebrew Cask / Formula 快速搜索工具，支持深色模式与响应式布局。',
       tag: '工具',
