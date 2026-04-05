@@ -9,7 +9,7 @@ const { show } = usePreviewImg()
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-2">
+  <div class="grid cols-2 gap-2 sm:cols-3 sm:gap-3">
     <div v-for="item, i in data" :key="item.src">
       <img
         class="w-full aspect-square object-cover cursor-zoom-in"

@@ -21,12 +21,12 @@ const { show } = usePreviewImg()
 </script>
 
 <template>
-  <div class="grid gap-2">
+  <div class="grid gap-4 lg:gap-3">
     <div v-if="showTitle">
       <a class="font-bold" :href="withBase('/photos')">Photos</a>
       <span> ——</span>
     </div>
-    <div class="imgs grid grid-cols-4 gap-2">
+    <div class="imgs grid cols-2 sm:cols-4 gap-3">
       <img
         v-for="item, i in photoItems"
         :key="item.src"

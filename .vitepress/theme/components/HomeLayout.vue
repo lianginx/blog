@@ -5,7 +5,7 @@ import PhotoSection from '#components/PhotoSection.vue'
 </script>
 
 <template>
-  <div class="grid gap-6">
+  <div class="grid gap-8">
     <ListBlog show-title :limit="12" />
     <ListProject show-title :limit="2" />
     <PhotoSection />

@@ -33,7 +33,7 @@ function clear() {
 </script>
 
 <template>
-  <div class="grid gap-2">
+  <div class="grid gap-4 lg:gap-3">
     <div v-if="showTitle">
       <a class="font-bold" :href="withBase('/blog')">Blog</a>
       <span> ——</span>
