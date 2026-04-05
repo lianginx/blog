@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
@@ -8,10 +7,10 @@
       "#components/*": ["./.vitepress/theme/components/*"],
       "#composables/*": ["./.vitepress/theme/composables/*"],
       "#data/*": ["./.vitepress/theme/data/*"],
-      "#layouts/*": ["./.vitepress/theme/layouts/*"],
       "#types/*": ["./.vitepress/theme/types/*"],
       "#utils/*": ["./.vitepress/theme/utils/*"]
-    }
+    },
+    "types": ["vitepress/client"]
   },
   "include": [
     ".vitepress/**/*.ts",
