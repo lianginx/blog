@@ -4,6 +4,7 @@ import type { PageData, SiteConfig } from 'vitepress'
 import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { generateRss } from '#utils/generateRss'
+// @ts-expect-error 没有相关类型
 import markdownItTextualUml from 'markdown-it-textual-uml'
 import UnoCSS from 'unocss/vite'
 import tsconfigPaths from 'vite-tsconfig-paths'

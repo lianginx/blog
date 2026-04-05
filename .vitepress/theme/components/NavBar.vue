@@ -16,13 +16,13 @@ function isActive(item: NavItem) {
 </script>
 
 <template>
-  <div class="md:absolute md:-ml-36 b-b b-b-solid b-b-[--vp-c-divider] md:b-none pb-6 mb-6 md:pb-0 md:mb-6 grid gap-2">
+  <div class="lg:absolute lg:-ml-36 b-b b-b-solid b-b-[--vp-c-divider] lg:b-none pb-6 mb-6 lg:pb-0 lg:mb-6 grid gap-2">
     <div>
       <a class="font-bold" :href="withBase('/')">
         {{ site.title }}
       </a>
     </div>
-    <div v-for="item in theme.nav.items" :key="item.link">
+    <div v-for="item in theme.nav?.items" :key="item.link">
       <a
         class="text-[--vp-c-text-2]"
         :class="{ '!text-[--vp-c-text-1] font-500': isActive(item) }"
@@ -31,23 +31,23 @@ function isActive(item: NavItem) {
         {{ item.title }}
       </a>
     </div>
-    <div key="social" class="flex mt-1 gap-3">
+    <div key="social" class="flex mt-2 gap-3">
       <a :href="withBase('/rss.xml')" alt="RSS 订阅" target="_blank">
         <RssIcon class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1]" :size="18" :stroke-width="3" />
       </a>
-      <a :href="theme.nav.github" alt="GitHub" target="_blank">
+      <a :href="theme.nav?.github" alt="GitHub" target="_blank">
         <SIcon
           class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px"
           :icon="siGithub"
         />
       </a>
-      <a :href="theme.nav.mastodon" alt="Mastodon" target="_blank">
+      <a :href="theme.nav?.mastodon" alt="Mastodon" target="_blank">
         <SIcon
           class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px"
           :icon="siMastodon"
         />
       </a>
-      <a :href="theme.nav.x" alt="X/Twitter" target="_blank">
+      <a :href="theme.nav?.x" alt="X/Twitter" target="_blank">
         <SIcon
           class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-16px h-16px"
           :icon="siX"

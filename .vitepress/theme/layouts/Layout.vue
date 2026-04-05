@@ -11,7 +11,7 @@ const { page, frontmatter } = useData()
 </script>
 
 <template>
-  <div class="p-6 md:w-2xl md:mx-auto md:p-10">
+  <div class="p-6 lg:w-2xl lg:mx-auto md:p-10">
     <NavBar />
     <main>
       <NotFound v-if="page.isNotFound" />
