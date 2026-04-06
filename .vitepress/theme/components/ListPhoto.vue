@@ -19,6 +19,7 @@ const { show } = usePreviewImg()
             : undefined
         "
         :src="withBase(item.src)"
+        :alt="item.date"
         loading="lazy"
         @click="show(data.map(o => o.src), i)"
       >

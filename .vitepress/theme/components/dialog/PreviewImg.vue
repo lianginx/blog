@@ -29,6 +29,7 @@ const { currentImg, isFirst, isLast, prev, next, close } = usePreviewImg()
         <img
           class="h-90svh w-90svw md:w-70svw object-contain"
           :src="withBase(currentImg)"
+          alt="预览图片"
           @click="close"
         >
         <ChevronRightIcon

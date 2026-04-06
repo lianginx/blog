@@ -31,8 +31,9 @@ const { show } = usePreviewImg()
         v-for="item, i in photoItems"
         :key="item.src"
         class="w-full aspect-square object-cover cursor-zoom-in"
-        :src="withBase(item.src)"
         :style="item.blurhash ? blurhashToGradientCssObject(item.blurhash) as CSSProperties : undefined"
+        :src="withBase(item.src)"
+        :alt="item.date"
         loading="lazy"
         @click="show(photoItems.map(o => o.src), i)"
       >
