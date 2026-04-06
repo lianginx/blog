@@ -3,4 +3,4 @@ title: Blog
 layout: page
 ---
 
-<ListBlog show-search/>
+<ListBlog show-search show-tags />
