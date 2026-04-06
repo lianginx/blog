@@ -3,9 +3,7 @@ title: "廖雪峰 GitHub 教程笔记"
 date: "2022-11-28"
 description: "廖雪峰Git教程核心笔记，系统学习版本控制基础操作、分支管理策略与远程仓库协作，适合Git初学者快速入门。"
 tags:
-  - github
   - git
-  - note
 ---
 
 

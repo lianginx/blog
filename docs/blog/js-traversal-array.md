@@ -4,8 +4,7 @@ date: "2022-11-28"
 description: "JavaScript数组遍历14种方法全面汇总，详解for、map、filter、reduce等API用法差异与适用场景，附代码示例。"
 tags:
   - javascript
-  - 前端
-  - 数组
+  - frontend
 ---
 
 

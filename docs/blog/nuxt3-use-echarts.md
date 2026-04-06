@@ -3,10 +3,7 @@ title: "Nuxt 3 如何使用 ECharts 图表"
 date: "2023-04-19"
 description: "在Nuxt 3项目中集成ECharts图表库的完整教程，解决服务端渲染兼容性和组件配置问题。"
 tags:
-  - nuxt
-  - echarts
-  - vue
-  - 前端
+  - frontend
 ---
 
 

@@ -4,9 +4,7 @@ date: "2023-12-19"
 description: "Commitlint工具完整使用指南，结合Husky配置Git提交钩子，规范团队commit信息格式，提升代码库可读性与维护性。"
 tags:
   - git
-  - commit
-  - npm
-  - lint
+  - guide
 ---
 
 

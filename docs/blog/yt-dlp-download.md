@@ -2,6 +2,8 @@
 title: "yt-dlp 下载 YouTube/Bilibili 视频"
 date: "2026-03-26"
 description: "使用yt-dlp命令行工具下载YouTube和Bilibili视频的实用教程，包括格式选择和Cookies配置。"
+tags:
+  - cli
 ---
 
 安装 [yt-dlp](https://github.com/yt-dlp/yt-dlp)

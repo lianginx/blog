@@ -4,7 +4,6 @@ date: "2025-04-07"
 description: "解决VS Code远程连接失败的常见问题，提供glibc兼容性和版本回退的解决方案。"
 tags:
   - vscode
-  - remote
 ---
 
 ## 问题描述

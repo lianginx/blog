@@ -3,6 +3,7 @@ title: "macOS 常用浏览器使用说明"
 date: "2022-11-28"
 description: "汇总macOS系统Edge浏览器常用快捷键，提升网页浏览效率与开发调试体验，包含标签页、地址栏及开发者工具操作技巧。"
 tags:
+  - macos
   - browser
 ---
 

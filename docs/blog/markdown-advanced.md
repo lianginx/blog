@@ -4,7 +4,6 @@ date: "2022-12-05"
 description: "探索Markdown高级扩展技巧，学习如何实现下划线、文本高亮、居中和嵌入视频等不常用但实用的功能。"
 tags:
   - markdown
-  - html
 ---
 
 :::tip 提示

@@ -3,10 +3,10 @@ title: "Dexie.js 入门教程"
 date: "2023-04-01"
 description: "Dexie.js入门教程，简化浏览器IndexedDB数据库操作，提供JavaScript与TypeScript环境下的增删改查实践方案。"
 tags:
-  - indexedDB
+  - database
   - javascript
   - typescript
-  - nodejs
+  - guide
 ---
 
 

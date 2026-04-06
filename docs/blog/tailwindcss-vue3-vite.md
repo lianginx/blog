@@ -3,10 +3,7 @@ title: "在 Vue 3 + Vite 项目中安装 Tailwind CSS"
 date: "2022-11-28"
 description: "在Vue 3 + Vite项目中安装配置Tailwind CSS的完整指南，包括依赖安装和配置优化。"
 tags:
-  - tailwindcss
-  - vue
-  - vite
-  - 前端
+  - frontend
 ---
 
 

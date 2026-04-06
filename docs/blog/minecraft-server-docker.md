@@ -3,9 +3,8 @@ title: "使用 Docker 搭建 Minecraft 服务端"
 date: "2022-12-05"
 description: "通过Docker快速部署Minecraft游戏服务器的完整指南，包括客户端启动器配置和服务端设置。"
 tags:
-  - minecraft
+  - game
   - docker
-  - 游戏
 ---
 
 

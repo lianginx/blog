@@ -3,8 +3,8 @@ title: "YAML 入门教程"
 date: "2022-11-28"
 description: "YAML配置文件入门教程，掌握基本语法规则、数据类型和复杂结构，替代JSON编写配置。"
 tags:
+  - guide
   - yaml
-  - 配置
 ---
 
 

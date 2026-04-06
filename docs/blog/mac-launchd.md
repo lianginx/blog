@@ -4,7 +4,8 @@ date: "2026-03-04"
 description: "学习macOS Launchd系统服务管理工具的入门指南，掌握配置文件语法、目录结构和常用命令，实现后台服务的自动化管理。"
 tags:
   - macos
-  - 系统
+  - cli
+  - guide
 ---
 
 Launchd 是 macOS 的系统服务管理工具（相当于 Windows 服务和 Linux systemd），它允许用户创建、启动、停止和配置 macOS 系统服务。

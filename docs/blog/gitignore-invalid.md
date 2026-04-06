@@ -3,7 +3,6 @@ title: "`.gitignore` 文件不生效的解决方案"
 date: "2022-11-28"
 description: "解决.gitignore文件不生效问题，通过清除Git本地缓存使文件忽略规则立即生效，适用于已被追踪的文件。"
 tags:
-  - note
   - git
 ---
 

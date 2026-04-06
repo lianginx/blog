@@ -3,8 +3,6 @@ title: "访问 Github 远程库连接超时的解决方案"
 date: "2022-11-28"
 description: "解决GitHub远程仓库连接超时问题，提供Git代理配置与GitHub Desktop两种方案，确保代码推送与同步顺畅。"
 tags:
-  - note
-  - github
   - git
   - vscode
 ---

@@ -4,7 +4,6 @@ date: "2022-11-28"
 description: "精选Visual Studio Code实用扩展推荐，涵盖美化、Markdown、画图等分类，提升开发效率。"
 tags:
   - vscode
-  - 扩展
 ---
 
 

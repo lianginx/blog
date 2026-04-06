@@ -4,7 +4,8 @@ date: "2025-11-04"
 description: "学习使用NSSM将普通程序注册为Windows系统服务的方法，实现开机自启和后台运行。"
 tags:
   - windows
-  - 服务
+  - cli
+  - guide
 ---
 
 NSSM（Non‑Sucking Service Manager）是一个轻量、稳定的 Windows 工具，用于将普通可执行程序注册为系统服务，使其能够随系统启动、在后台持续运行，并支持自动重启、进程优先级设置和日志管理，无需修改程序源码，广泛应用于后台任务、网络代理内核和长期运行的自定义工具管理。

@@ -4,7 +4,6 @@ date: "2022-12-05"
 description: "Visual Studio Code环境配置指南，包括设置方法、推荐配置项和字体选择，打造高效开发环境。"
 tags:
   - vscode
-  - 配置
 ---
 
 

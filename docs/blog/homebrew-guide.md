@@ -4,7 +4,8 @@ date: "2023-06-17"
 description: "macOS Homebrew包管理器安装与使用指南，掌握brew install、search、upgrade等常用命令，高效管理软件包。"
 tags:
   - macos
-  - 工具
+  - cli
+  - guide
 ---
 
 

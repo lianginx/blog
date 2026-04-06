@@ -3,8 +3,7 @@ title: "二分查找"
 date: "2023-07-01"
 description: "详解二分查找算法原理与JavaScript实现，掌握O(log n)时间复杂度的高效搜索方法，适用于有序数组查找场景。"
 tags:
-  - 算法
-  - javascript
+  - algorithm
 ---
 
 
