@@ -32,24 +32,40 @@ function isActive(item: NavItem) {
       </a>
     </span>
     <div key="social" class="flex items-center h-6 gap-3">
-      <a :href="withBase('/rss.xml')" alt="RSS 订阅" target="_blank">
+      <a
+        :href="withBase('/rss.xml')"
+        target="_blank"
+        aria-label="RSS 订阅"
+      >
         <RssIcon class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1]" :size="18" :stroke-width="3" />
       </a>
-      <a :href="theme.nav?.github" alt="GitHub" target="_blank">
+      <a
+        v-if="theme.nav?.github"
+        :href="theme.nav.github" target="_blank"
+        aria-label="GitHub"
+      >
         <SIcon
           class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px"
           :icon="siGithub"
         />
       </a>
-      <a :href="theme.nav?.mastodon" alt="Mastodon" target="_blank">
+      <a
+        v-if="theme.nav?.mastodon"
+        :href="theme.nav.mastodon" target="_blank"
+        aria-label="Mastodon"
+      >
         <SIcon
           class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px"
           :icon="siMastodon"
         />
       </a>
-      <a :href="theme.nav?.x" alt="X/Twitter" target="_blank">
+      <a
+        v-if="theme.nav?.x"
+        :href="theme.nav.x" target="_blank"
+        aria-label="X"
+      >
         <SIcon
-          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-16px h-16px"
+          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-16px h-15px"
           :icon="siX"
         />
       </a>

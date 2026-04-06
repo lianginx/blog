@@ -38,13 +38,14 @@ const projects = computed(() =>
     </div>
 
     <div v-if="showFilter" class="flex flex-wrap gap-2 mb-1">
-      <div
+      <button
         v-for="item in tags" :key="item"
         class="hover:bg-[--vp-c-default-soft] px-2 py-1 rd-md cursor-pointer text-sm"
-        :class="{ 'bg-[--vp-c-default-soft]': currentTag === item }" @click="currentTag = item"
+        :class="{ 'bg-[--vp-c-default-soft]': currentTag === item }"
+        @click="currentTag = item"
       >
         {{ item }}
-      </div>
+      </button>
     </div>
 
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-3">
@@ -52,7 +53,10 @@ const projects = computed(() =>
         v-for="item in projects" :key="item.title"
         class="flex flex-col b b-solid b-[--vp-c-divider] hover:b-[--vp-c-border] p-4 rd-md gap-2"
       >
-        <a class="text-lg font-bold line-clamp-1 hover:decoration-none" :href="item.links[0].url" target="_blank">
+        <a
+          class="text-lg font-bold line-clamp-1 hover:decoration-none"
+          :href="item.links[0].url" target="_blank"
+        >
           {{ item.title }}
         </a>
         <div class="line-clamp-3 leading-normal text-xs text-[--vp-c-text-2] h-14 mb-3">
@@ -64,8 +68,10 @@ const projects = computed(() =>
           </div>
           <div class="flex gap-1">
             <a
-              v-for="link in item.links" :key="link.url" class="p-1 rd hover:bg-[--vp-c-default-soft]" :href="link.url"
-              target="_blank"
+              v-for="link in item.links" :key="link.url"
+              class="p-1 rd hover:bg-[--vp-c-default-soft]"
+              :href="link.url" target="_blank"
+              :aria-label="link.type"
             >
               <SIcon v-if="link.type === 'github'" class="w-4 h-4" :icon="siGithub" />
               <SIcon v-else-if="link.type === 'npm'" class="w-4 h-4" :icon="siNpm" />
