@@ -18,6 +18,19 @@ export default defineConfig<ThemeConfig>({
   srcDir: 'docs',
   lang: 'zh-CN',
   lastUpdated: true,
+  head: [
+    // Google Analytics 4
+    ['script', {
+      async: '',
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-B3LNPKF68P',
+    }],
+    ['script', {}, `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-B3LNPKF68P');
+    `],
+  ],
   sitemap: { hostname: SITE_URL },
   markdown: {
     config: (md) => { md.use(markdownItTextualUml) },
