@@ -7,9 +7,12 @@ const { frontmatter } = useData<ThemeConfig>()
 
 <template>
   <div class="vp-doc">
-    <div class="grid gap-4 mb-10">
+    <div class="grid gap-4 mb-8">
       <h1>{{ frontmatter.title }}</h1>
-      <div class="flex flex-wrap space-x-2 text-xs">
+      <div
+        v-if="frontmatter.tags"
+        class="flex flex-wrap space-x-2 text-xs"
+      >
         <div
           v-for="tag in frontmatter.tags" :key="tag"
           class="bg-[--vp-c-default-soft] hover:bg-[--vp-c-default-3] rd-full px-3 py-1 cursor-default"
