@@ -1,6 +1,7 @@
 ---
 title: 寓言故事一则
 date: "2026-04-08"
+description: "禅宗寓言一则 —— 谁之过？"
 tags:
   - life
   - philosophy
