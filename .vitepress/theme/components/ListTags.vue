@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TagItem } from '#types/theme'
+import type { TagItem } from '#types'
 
 withDefaults(
   defineProps<{

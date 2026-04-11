@@ -1,11 +1,5 @@
 <script lang="ts" setup>
-import BackTop from '#components/BackTop.vue'
-import DialogPreviewImg from '#components/dialog/PreviewImg.vue'
-import DocContent from '#components/DocContent.vue'
-import FootBar from '#components/FootBar.vue'
-import NavBar from '#components/NavBar.vue'
-import NotFound from '#components/NotFound.vue'
-import { useData } from 'vitepress'
+import { Content } from 'vitepress'
 
 const { page, frontmatter } = useData()
 </script>

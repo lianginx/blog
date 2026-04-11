@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ArrowUpFromLineIcon } from '@lucide/vue'
-import { onMounted, onUnmounted, ref } from 'vue'
 
 const isShow = ref(false)
 

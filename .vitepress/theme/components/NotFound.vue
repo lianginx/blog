@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-import { withBase } from 'vitepress'
-</script>
-
 <template>
   <div class="grid gap-6">
     <h1 class="font-500 text-2xl">

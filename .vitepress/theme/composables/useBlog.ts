@@ -1,6 +1,5 @@
-import type { TagItem } from '#theme/types/theme'
+import type { TagItem } from '#types'
 import { data as blogsRaw } from '#data/blog.data'
-import { computed, ref } from 'vue'
 
 interface UseBlogOptions {
   limit?: number

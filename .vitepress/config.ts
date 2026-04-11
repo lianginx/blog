@@ -1,18 +1,20 @@
-import type { NavItem, ProjectItem, ThemeConfig } from '#types/theme'
-import type { IRaw } from '#utils/generateRss'
 import type { PageData, SiteConfig } from 'vitepress'
+import type { FriendItem, NavItem, ProjectItem, ThemeConfig } from './theme/types'
+import type { IRaw } from './theme/utils/generateRss'
 import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { generateRss } from '#utils/generateRss'
 // @ts-expect-error 没有相关类型
 import markdownItTextualUml from 'markdown-it-textual-uml'
 import UnoCSS from 'unocss/vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
-import { defineConfig } from 'vitepress'
+import AutoImport from 'unplugin-auto-import/vite'
+import AutoImportComponents from 'unplugin-vue-components/vite'
+import AutoTsconfigPath from 'vite-tsconfig-paths'
+import { defineConfigWithTheme } from 'vitepress'
+import { generateRss } from './theme/utils/generateRss'
 
 const SITE_URL = 'https://in-x.cc'
 
-export default defineConfig<ThemeConfig>({
+export default defineConfigWithTheme<ThemeConfig>({
   title: 'Liang\'s Blog',
   description: 'Liang\'s Blog',
   srcDir: 'docs',
@@ -38,7 +40,19 @@ export default defineConfig<ThemeConfig>({
   vite: {
     plugins: [
       UnoCSS(),
-      tsconfigPaths({ loose: true }),
+      AutoTsconfigPath({ loose: true }),
+      AutoImport({
+        imports: ['vue', 'vitepress'],
+        dts: '../.vitepress/cache/auto-import.d.ts',
+        vueTemplate: true,
+        vueDirectives: true,
+      }),
+      AutoImportComponents({
+        dirs: ['../.vitepress/theme/components'],
+        dts: '../.vitepress/cache/components.d.ts',
+        collapseSamePrefixes: true,
+        directoryAsNamespace: true,
+      }),
     ],
   },
   transformPageData(pageData) {
@@ -55,6 +69,7 @@ export default defineConfig<ThemeConfig>({
       x: 'https://x.com/Niujunliang',
     },
     projects: { items: projectItems() },
+    friends: { items: friendItems() },
     footbar: {
       showVitePress: true,
       items: [
@@ -69,6 +84,7 @@ function navItems(): NavItem[] {
     { title: 'Blog', link: '/blog', activeMatch: '/blog/' },
     { title: 'Projects', link: '/projects' },
     { title: 'Photos', link: '/photos', activeMatch: '/photos/' },
+    { title: 'Friends', link: '/friends' },
   ]
 }
 
@@ -133,6 +149,14 @@ function projectItems(): ProjectItem[] {
         { type: 'github', url: 'https://github.com/lianginx/chatgpt-nuxt' },
       ],
     },
+  ]
+}
+
+function friendItems(): FriendItem[] {
+  return [
+    { name: 'Twinkle317', link: 'https://lizhenwang.com' },
+    { name: 'Twinkle317', link: 'https://lizhenwang.com' },
+    { name: 'Twinkle317', link: 'https://lizhenwang.com' },
   ]
 }
 

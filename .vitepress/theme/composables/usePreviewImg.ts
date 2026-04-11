@@ -1,5 +1,3 @@
-import { computed, onMounted, ref } from 'vue'
-
 const imgs = ref<string[]>([])
 const index = ref(0)
 

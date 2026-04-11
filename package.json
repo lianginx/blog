@@ -5,8 +5,6 @@
     "dev": "vitepress dev",
     "build": "eslint --fix && vitepress build",
     "preview": "vitepress preview",
-    "build:deploy": "npm run build && wrangler pages deploy .vitepress/dist --project-name=blog-v2",
-    "build:deploy:preview": "npm run build && wrangler pages deploy .vitepress/dist --project-name=blog-v2 --branch=preview",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
@@ -15,8 +13,7 @@
     "markdown-it-textual-uml": "^0.17.1",
     "simple-icons": "^16.14.0",
     "unocss": "^66.6.7",
-    "vite-tsconfig-paths": "^6.1.1",
-    "vitepress": "^2.0.0-alpha.17",
+    "vitepress": "^1.6.4",
     "vue": "^3.5.30"
   },
   "devDependencies": {
@@ -26,6 +23,9 @@
     "@unpic/placeholder": "^0.1.2",
     "blurhash": "^2.0.5",
     "eslint": "^10.0.3",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "unplugin-auto-import": "^21.0.0",
+    "unplugin-vue-components": "^32.0.0",
+    "vite-tsconfig-paths": "^6.1.1"
   }
 }

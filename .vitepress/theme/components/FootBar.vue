@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import type { ThemeConfig } from '#types/theme'
-import SquareTag from '#components/SquareTag.vue'
-import { useData } from 'vitepress'
+import type { ThemeConfig } from '#types'
 
 const { theme } = useData<ThemeConfig>()
 </script>

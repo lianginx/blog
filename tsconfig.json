@@ -5,10 +5,12 @@
     "paths": {
       "#theme/*": ["./.vitepress/theme/*"],
       "#components/*": ["./.vitepress/theme/components/*"],
-      "#composables/*": ["./.vitepress/theme/composables/*"],
       "#data/*": ["./.vitepress/theme/data/*"],
-      "#types/*": ["./.vitepress/theme/types/*"],
-      "#utils/*": ["./.vitepress/theme/utils/*"]
+      "#utils/*": ["./.vitepress/theme/utils/*"],
+      "#composables": ["./.vitepress/theme/composables/index"],
+      "#composables/*": ["./.vitepress/theme/composables/*"],
+      "#types": ["./.vitepress/theme/types/index"],
+      "#types/*": ["./.vitepress/theme/types/*"]
     },
     "types": ["vitepress/client"]
   },

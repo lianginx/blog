@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import type { ThemeConfig } from '#theme/types/theme'
-import SIcon from '#components/SIcon.vue'
+import type { ThemeConfig } from '#types'
 import { HouseIcon } from '@lucide/vue'
 import { siGithub, siNpm } from 'simple-icons'
-import { useData, withBase } from 'vitepress'
-import { computed, ref } from 'vue'
 
 const props = withDefaults(
   defineProps<{

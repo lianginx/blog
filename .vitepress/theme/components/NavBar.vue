@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import type { NavItem, ThemeConfig } from '#types/theme'
-import SIcon from '#components/SIcon.vue'
+import type { NavItem, ThemeConfig } from '#types'
 import { RssIcon } from '@lucide/vue'
 import { siGithub, siMastodon, siX } from 'simple-icons'
-import { useData, useRoute, withBase } from 'vitepress'
 
 const route = useRoute()
 const { site, theme } = useData<ThemeConfig>()

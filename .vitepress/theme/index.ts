@@ -2,6 +2,7 @@
 import type { Theme } from 'vitepress'
 import HomeLayout from '#components/HomeLayout.vue'
 import ListBlog from '#components/ListBlog.vue'
+import ListFriends from '#components/ListFriends.vue'
 import ListPhoto from '#components/ListPhoto.vue'
 import ListProject from '#components/ListProject.vue'
 import DefaultTheme from 'vitepress/theme'
@@ -19,5 +20,6 @@ export default {
       .component('ListPhoto', ListPhoto)
       .component('ListBlog', ListBlog)
       .component('ListProject', ListProject)
+      .component('ListFriends', ListFriends)
   },
 } satisfies Theme

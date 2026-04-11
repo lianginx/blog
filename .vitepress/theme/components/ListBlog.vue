@@ -1,9 +1,6 @@
-<script lang="ts" setup>
-import ListTags from '#components/ListTags.vue'
-import { useBlog } from '#composables/useBlog'
+<script lang="ts" setup name="ListBlog">
+import { useBlog } from '#composables'
 import { ChevronsDownUpIcon, CircleXIcon, SearchIcon, TagIcon, XIcon } from '@lucide/vue'
-import { withBase } from 'vitepress'
-import { ref } from 'vue'
 
 const props = defineProps<{
   showTitle?: boolean
