@@ -54,7 +54,7 @@ const projects = computed(() =>
         class="flex flex-col b b-solid b-[--vp-c-divider] hover:b-[--vp-c-border] p-4 rd-md gap-2"
       >
         <a
-          class="text-lg font-bold line-clamp-1 hover:decoration-none"
+          class="text-lg font-bold line-clamp-1"
           :href="item.links[0].url" target="_blank"
         >
           {{ item.title }}
