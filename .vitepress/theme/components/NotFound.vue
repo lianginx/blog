@@ -3,15 +3,14 @@ import { withBase } from 'vitepress'
 </script>
 
 <template>
-  <div class="line-height-relaxed">
-    <p class="text-[--vp-c-text-2] font-500 text-2xl">
-      您要找的页面不存在
-    </p>
-    <br>
-    <p class="text-[--vp-c-text-3]">
-      这甚至不是一个有趣的 404 页面。
-    </p>
-    <br>
+  <div class="grid gap-6">
+    <h1 class="font-500 text-2xl">
+      页面不存在
+    </h1>
+    <div class="text-[--vp-c-text-2] leading-ZZZ">
+      <p>人道洛阳花似锦</p>
+      <p>偏我来时不逢春</p>
+    </div>
     <a :href="withBase('/')">返回首页</a>
   </div>
 </template>
