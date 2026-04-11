@@ -154,9 +154,15 @@ function projectItems(): ProjectItem[] {
 
 function friendItems(): FriendItem[] {
   return [
-    { name: 'Twinkle317', link: 'https://lizhenwang.com' },
-    { name: 'Twinkle317', link: 'https://lizhenwang.com' },
-    { name: 'Twinkle317', link: 'https://lizhenwang.com' },
+    {
+      name: 'Twinkle317',
+      link: 'https://lizhenwang.com',
+      avatar: 'https://cravatar.cn/avatar/3138ff0aca4911df18d1dcc8c125fe7c?s=128',
+    },
+    {
+      name: '笔由随心',
+      link: 'https://blog.yeshan-taoist.cn',
+    },
   ]
 }
 

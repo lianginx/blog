@@ -5,5 +5,6 @@ export interface FriendsConfig {
 export interface FriendItem {
   name: string
   link: string
+  desc?: string
   avatar?: string
 }
