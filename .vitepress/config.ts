@@ -160,8 +160,10 @@ function friendItems(): FriendItem[] {
       avatar: 'https://cravatar.cn/avatar/3138ff0aca4911df18d1dcc8c125fe7c?s=128',
     },
     {
-      name: '笔由随心',
+      name: '野山杂货铺',
       link: 'https://blog.yeshan-taoist.cn',
+      avatar: 'https://blog.yeshan-taoist.cn/favicon.ico',
+      desc: '一个用来记录个人思绪的地方',
     },
   ]
 }
