@@ -55,7 +55,7 @@ function handleItems(site: ISite, pages: IRaw[]) {
       <link>${url}</link>
       <guid>${url}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <description><![CDATA[${post.description || ''}]]></description>
+      <description><![CDATA[${post.description || ''}<br><a href="${url}" target="_blank">查看全文</a>]]></description>
     </item>`
     })
     .join('')
