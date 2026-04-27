@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@lucide/vue": "^1.7.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.1",
     "markdown-it-textual-uml": "^0.17.1",
     "simple-icons": "^16.14.0",
     "unocss": "^66.6.7",

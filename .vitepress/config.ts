@@ -1,8 +1,4 @@
-import type { PageData, SiteConfig } from 'vitepress'
 import type { FriendItem, NavItem, ProjectItem, ThemeConfig } from './theme/types'
-import type { IRaw } from './theme/utils/generateRss'
-import { writeFileSync } from 'node:fs'
-import { resolve } from 'node:path'
 // @ts-expect-error 没有相关类型
 import markdownItTextualUml from 'markdown-it-textual-uml'
 import UnoCSS from 'unocss/vite'
@@ -55,11 +51,8 @@ export default defineConfigWithTheme<ThemeConfig>({
       }),
     ],
   },
-  transformPageData(pageData) {
-    transformToRaw(pageData)
-  },
-  buildEnd(siteConfig) {
-    rss(siteConfig)
+  async buildEnd(siteConfig) {
+    await generateRss(siteConfig)
   },
   themeConfig: {
     nav: {
@@ -166,39 +159,4 @@ function friendItems(): FriendItem[] {
       desc: '一个用来记录个人思绪的地方',
     },
   ]
-}
-
-// Generate RSS feed
-const pages: IRaw[] = []
-function transformToRaw({
-  title,
-  description,
-  frontmatter,
-  relativePath,
-}: PageData) {
-  if (relativePath.startsWith('blog/')) {
-    pages.push({
-      title,
-      description: description || title,
-      date: frontmatter.date,
-      link: relativePath,
-    })
-  }
-}
-function rss({ site, outDir }: SiteConfig<ThemeConfig>) {
-  const rss = generateRss({
-    limit: 20,
-    pages,
-    site: {
-      title: site.title,
-      url: SITE_URL,
-      description: site.description,
-      lang: site.lang,
-    },
-  })
-
-  writeFileSync(resolve(outDir, 'rss.xml'), rss, 'utf-8')
-
-  // eslint-disable-next-line no-console
-  console.log('✓ generating rss...\n')
 }

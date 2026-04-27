@@ -1,64 +1,65 @@
-export interface ISite {
-  title: string
-  url: string
-  description: string
-  lang: string
-}
+import type { ThemeConfig } from '#theme/types'
+import type { SiteConfig } from 'vitepress'
+import { readdir, writeFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+import matter from 'gray-matter'
+import MarkdownIt from 'markdown-it'
 
-export interface IRaw {
-  title: string
-  description: string
-  date: string
-  link: string
-}
+export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<ThemeConfig>) {
+  if (!sitemap?.hostname) {
+    throw new Error('Please provide a sitemap hostname.')
+  }
 
-export interface GenerateRssParams {
-  site: ISite
-  pages: IRaw[]
-  limit: number
-}
+  // 获取文章列表
+  const blogFolderPath = resolve(__dirname, '../../../docs/blog')
+  const postPaths = (await readdir(blogFolderPath)).map(fileName => resolve(blogFolderPath, fileName))
 
-export function generateRss({ site, pages, limit }: GenerateRssParams) {
-  const latestPosts = [...pages]
-    .sort((a, b) => +new Date(b.date) - +new Date(a.date))
-    .slice(0, limit)
+  // 格式化文章列表
+  const posts = postPaths
+    .map((path) => {
+      const { data, content } = matter.read(path)
 
-  const items = handleItems(site, latestPosts)
-  const rss = handleChannel(site, items)
+      const md = new MarkdownIt({ html: true, linkify: true, typographer: true })
+      const htmlContent = md.render(content)
 
-  return rss
-}
+      const postFileName = path.split('/')?.at(-1)?.replace('.md', '')
+      const url = new URL(`/blog/${postFileName}`, sitemap.hostname).href
 
-function handleChannel(site: ISite, items: string) {
-  return `<?xml version="1.0" encoding="UTF-8" ?>
+      return {
+        frontmatter: data,
+        content: htmlContent,
+        url,
+      }
+    })
+    .sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
+    .slice(0, 20)
+
+  // 生成 RSS XML 内容
+  const rssXML = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${escapeXml(site.title)}</title>
-    <link>${site.url}</link>
+    <link>${sitemap.hostname}</link>
     <description>${escapeXml(site.description)}</description>
     <language>${site.lang}</language>
-    <atom:link href="${site.url}/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${sitemap.hostname}/rss.xml" rel="self" type="application/rss+xml" />
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-${items}
+${posts.map(item => `
+    <item>
+      <title>${escapeXml(item.frontmatter.title)}</title>
+      <link>${item.url}</link>
+      <guid>${item.url}</guid>
+      <pubDate>${new Date(item.frontmatter.date).toUTCString()}</pubDate>
+      <description><![CDATA[${item.content}]]></description>
+    </item>`)}
   </channel>
 </rss>`
-}
 
-function handleItems(site: ISite, pages: IRaw[]) {
-  return pages
-    .map((post) => {
-      const path = post.link.replace(/((^|\/)index)?\.md$/, '$2')
-      const url = new URL(path, site.url).href
-      return `
-    <item>
-      <title>${escapeXml(post.title)}</title>
-      <link>${url}</link>
-      <guid>${url}</guid>
-      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      <description><![CDATA[${post.description || ''}<br><a href="${url}" target="_blank">查看全文</a>]]></description>
-    </item>`
-    })
-    .join('')
+  // 写入文件
+  writeFile(resolve(outDir, 'rss.xml'), rssXML, 'utf-8')
+
+  // 打印日志
+  logger.info('✓ generating rss...\n')
 }
 
 function escapeXml(str: string) {
