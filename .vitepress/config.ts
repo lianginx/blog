@@ -32,6 +32,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   sitemap: { hostname: SITE_URL },
   markdown: {
     config: (md) => { md.use(markdownItTextualUml) },
+    image: { lazyLoading: true },
   },
   vite: {
     plugins: [
