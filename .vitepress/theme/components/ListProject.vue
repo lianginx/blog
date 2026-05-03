@@ -29,15 +29,15 @@ const projects = computed(() =>
 
 <template>
   <div class="grid gap-4 lg:gap-3">
-    <div v-if="showTitle">
-      <a class="font-bold" :href="withBase('/projects')">Projects</a>
+    <div v-if="showTitle" class="leading-relaxed">
+      <a class="font-bold tracking-tight" :href="withBase('/projects')">Projects</a>
       <span> ——</span>
     </div>
 
     <div v-if="showFilter" class="flex flex-wrap gap-2 mb-1">
       <button
         v-for="item in tags" :key="item"
-        class="hover:bg-[--vp-c-default-soft] px-2 py-1 rd-md cursor-pointer text-sm"
+        class="hover:bg-[--vp-c-default-soft] px-2 py-1 rd-md cursor-pointer text-sm transition-colors duration-150 active:scale-96"
         :class="{ 'bg-[--vp-c-default-soft]': currentTag === item }"
         @click="currentTag = item"
       >
@@ -56,7 +56,7 @@ const projects = computed(() =>
         >
           {{ item.title }}
         </a>
-        <div class="line-clamp-3 leading-normal text-xs text-[--vp-c-text-2] h-14 mb-3">
+        <div class="line-clamp-3 leading-relaxed text-xs text-[--vp-c-text-2] h-14 mb-3">
           {{ item.description }}
         </div>
         <div class="flex justify-between items-center">

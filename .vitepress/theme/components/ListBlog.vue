@@ -26,8 +26,8 @@ function SwitchShowTags() {
 
 <template>
   <div class="space-y-4 lg:space-y-3">
-    <div v-if="showTitle">
-      <a class="font-bold" :href="withBase('/blog')">Blog</a>
+    <div v-if="showTitle" class="leading-relaxed">
+      <a class="font-bold tracking-tight" :href="withBase('/blog')">Blog</a>
       <span> ——</span>
     </div>
 
@@ -44,7 +44,7 @@ function SwitchShowTags() {
         <input v-model.trim="keywords" class="flex-1 text-sm" placeholder="Search...">
       </div>
       <button
-        class="text-[--vp-c-text-3] cursor-pointer ml-4"
+        class="text-[--vp-c-text-3] cursor-pointer ml-4 transition-colors duration-200"
         :aria-label="currentTag ? '清除已选标签' : '展开/折叠标签栏'"
         @click="currentTag ? clearCurrentTag() : SwitchShowTags()"
       >
@@ -66,7 +66,7 @@ function SwitchShowTags() {
 
     <div
       v-for="{ url, frontmatter } in blogs" :key="url"
-      class="flex flex-col md:flex-row justify-between gap-1 md:gap-4"
+      class="flex flex-col md:flex-row justify-between gap-1 md:gap-4 leading-relaxed"
     >
       <div class="flex-1 line-clamp-2 md:line-clamp-1">
         <a :href="withBase(url)">{{ frontmatter.title }}</a>

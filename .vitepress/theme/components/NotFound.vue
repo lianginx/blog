@@ -1,6 +1,6 @@
 <template>
-  <div class="grid gap-6">
-    <h1 class="font-500 text-2xl">
+  <div class="grid gap-8">
+    <h1 class="font-500 text-2xl text-balance">
       页面不存在
     </h1>
     <div class="text-[--vp-c-text-2] leading-ZZZ">

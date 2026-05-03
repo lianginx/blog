@@ -29,14 +29,29 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
-    v-show="isShow"
-    class="fixed flex justify-center items-center cursor-pointer right-8 bottom-8 size-10 rd-lg transition-background-color-200 hover:bg-[--vp-c-default-soft]"
-    role="button"
-    aria-label="返回顶部"
-    tabindex="0"
-    @click="scrollToTop"
-  >
-    <ArrowUpFromLineIcon class="text-[--vp-c-text-3]" :size="18" />
-  </div>
+  <Transition name="back-top">
+    <div
+      v-show="isShow"
+      class="fixed flex justify-center items-center cursor-pointer right-8 bottom-8 size-10 rd-lg transition-colors duration-200 hover:bg-[--vp-c-default-soft] active:scale-96 will-change-transform"
+      role="button"
+      aria-label="返回顶部"
+      tabindex="0"
+      @click="scrollToTop"
+    >
+      <ArrowUpFromLineIcon class="text-[--vp-c-text-3]" :size="18" />
+    </div>
+  </Transition>
 </template>
+
+<style scoped>
+.back-top-enter-active,
+.back-top-leave-active {
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.back-top-enter-from,
+.back-top-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+</style>

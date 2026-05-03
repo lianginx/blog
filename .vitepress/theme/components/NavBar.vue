@@ -14,9 +14,9 @@ function isActive(item: NavItem) {
 </script>
 
 <template>
-  <div class="lg:absolute lg:-ml-36 b-b b-b-solid b-b-[--vp-c-divider] lg:b-none pb-6 mb-6 lg:pb-0 lg:mb-6 grid gap-3">
+  <div class="lg:absolute lg:-ml-42 b-b b-b-solid b-b-[--vp-c-divider] lg:b-none pb-6 mb-6 lg:pb-0 lg:mb-6 grid gap-4 lg:gap-3 leading-relaxed">
     <div>
-      <a class="font-bold" :href="withBase('/')">
+      <a class="font-bold tracking-tight" :href="withBase('/')">
         {{ site.title }}
       </a>
     </div>
@@ -29,13 +29,13 @@ function isActive(item: NavItem) {
         {{ item.title }}
       </a>
     </span>
-    <div key="social" class="flex items-center h-6 gap-3">
+    <div key="social" class="flex items-center h-6.5 gap-4">
       <a
         :href="withBase('/rss.xml')"
         target="_blank"
         aria-label="RSS 订阅"
       >
-        <RssIcon class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1]" :size="18" :stroke-width="3" />
+        <RssIcon class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] transition-colors duration-200" :size="18" :stroke-width="3" />
       </a>
       <a
         v-if="theme.nav?.github"
@@ -43,7 +43,7 @@ function isActive(item: NavItem) {
         aria-label="GitHub"
       >
         <SIcon
-          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px"
+          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px transition-colors duration-200"
           :icon="siGithub"
         />
       </a>
@@ -53,7 +53,7 @@ function isActive(item: NavItem) {
         aria-label="Mastodon"
       >
         <SIcon
-          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px"
+          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-17px h-17px transition-colors duration-200"
           :icon="siMastodon"
         />
       </a>
@@ -63,7 +63,7 @@ function isActive(item: NavItem) {
         aria-label="X"
       >
         <SIcon
-          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-16px h-15px"
+          class="text-[--vp-c-text-3] hover:text-[--vp-c-text-1] w-16px h-15px transition-colors duration-200"
           :icon="siX"
         />
       </a>

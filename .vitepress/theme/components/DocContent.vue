@@ -7,7 +7,9 @@ const { frontmatter } = useData<ThemeConfig>()
 <template>
   <div class="vp-doc">
     <div class="grid gap-4 mb-8">
-      <h1>{{ frontmatter.title }}</h1>
+      <h1 class="text-balance tracking-tight">
+        {{ frontmatter.title }}
+      </h1>
       <div
         v-if="frontmatter.tags"
         class="flex flex-wrap space-x-2 text-xs"

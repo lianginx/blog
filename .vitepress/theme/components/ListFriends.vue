@@ -11,7 +11,7 @@ const applyUrl = `https://github.com/lianginx/blog/issues/new?template=申请友
     <div class="grid cols-1 sm:cols-2 gap-y-6 sm:gap-x-3">
       <a
         v-for="friend in theme.friends?.items" :key="friend.link"
-        class="flex space-x-3 hover:decoration-none"
+        class="flex space-x-3 hover:decoration-none transition-shadow duration-200"
         :href="friend.link"
         target="_blank"
       >
@@ -29,8 +29,7 @@ const applyUrl = `https://github.com/lianginx/blog/issues/new?template=申请友
         </div>
       </a>
     </div>
-    <br>
-    <div>
+    <div class="mt-8">
       <a :href="applyUrl" target="_blank">申请友链</a>
     </div>
   </div>
