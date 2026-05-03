@@ -38,11 +38,13 @@ a:hover {
 
 /* .vp-doc */
 
-.vp-doc a {
+.vp-doc a,
+.custom-block.details a {
   font-weight: normal;
-  color: var(--vp-c-text-1);
+  color: inherit;
 }
 
-.vp-doc a:hover {
-  color: var(--vp-c-text-1);
+.vp-doc a:hover,
+.custom-block.details a:hover {
+  color: inherit;
 }
