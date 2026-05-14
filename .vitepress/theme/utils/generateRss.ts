@@ -12,7 +12,9 @@ export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<
 
   // 获取文章列表
   const blogFolderPath = resolve(__dirname, '../../../docs/blog')
-  const postPaths = (await readdir(blogFolderPath)).map(fileName => resolve(blogFolderPath, fileName))
+  const postPaths = (await readdir(blogFolderPath))
+    .filter(fileName => fileName.endsWith('.md'))
+    .map(fileName => resolve(blogFolderPath, fileName))
 
   // 格式化文章列表
   const posts = postPaths
