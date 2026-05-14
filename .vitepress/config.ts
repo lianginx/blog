@@ -6,13 +6,12 @@ import AutoImport from 'unplugin-auto-import/vite'
 import AutoImportComponents from 'unplugin-vue-components/vite'
 import AutoTsconfigPath from 'vite-tsconfig-paths'
 import { defineConfigWithTheme } from 'vitepress'
+import { generateOG } from './theme/utils/generateOG'
 import { generateRss } from './theme/utils/generateRss'
-
-const SITE_URL = 'https://in-x.cc'
 
 export default defineConfigWithTheme<ThemeConfig>({
   title: 'Liang\'s Blog',
-  description: 'Liang\'s Blog',
+  description: '写代码、折腾工具、偶尔拍照。记录那些让我觉得「有意思」的东西。',
   srcDir: 'docs',
   lang: 'zh-CN',
   lastUpdated: true,
@@ -28,8 +27,16 @@ export default defineConfigWithTheme<ThemeConfig>({
       gtag('js', new Date());
       gtag('config', 'G-B3LNPKF68P');
     `],
+    // Open Graph 默认值
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'Liang\'s Blog' }],
+    ['meta', { property: 'og:locale', content: 'zh_CN' }],
+    // Twitter Cards 默认值
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:site', content: '@Niujunliang' }],
   ],
-  sitemap: { hostname: SITE_URL },
+  // RSS、OG/Twitter Cards，都依赖这里传递域名，不要随便删除
+  sitemap: { hostname: 'https://in-x.cc' },
   markdown: {
     config: (md) => { md.use(markdownItTextualUml) },
     image: { lazyLoading: true },
@@ -51,6 +58,9 @@ export default defineConfigWithTheme<ThemeConfig>({
         directoryAsNamespace: true,
       }),
     ],
+  },
+  transformPageData(pageData, ctx) {
+    generateOG(pageData, ctx)
   },
   async buildEnd(siteConfig) {
     await generateRss(siteConfig)
