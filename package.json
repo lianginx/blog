@@ -29,5 +29,10 @@
     "unplugin-auto-import": "^21.0.0",
     "unplugin-vue-components": "^32.0.0",
     "vite-tsconfig-paths": "^6.1.1"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.33.5": true
   }
 }
