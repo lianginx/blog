@@ -108,7 +108,6 @@ function projectItems(): ProjectItem[] {
       tag: '工具',
       links: [
         { type: 'github', url: 'https://github.com/lianginx/homebrew-search' },
-        { type: 'home', url: 'https://brew.in-x.cc' },
       ],
     },
     {
