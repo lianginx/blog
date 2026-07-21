@@ -167,15 +167,24 @@ function projectItems(): ProjectItem[] {
 function friendItems(): FriendItem[] {
   return [
     {
+      name: '博客大联盟',
+      desc: '发现值得反复阅读的独立博客',
+      link: 'https://bo.ke',
+      avatar: {
+        dark: '/friends/bo-ke/dark-logo.png',
+        light: '/friends/bo-ke/light-logo.png',
+      },
+    },
+    {
       name: 'Twinkle317',
       link: 'https://lizhenwang.com',
       avatar: 'https://cravatar.cn/avatar/3138ff0aca4911df18d1dcc8c125fe7c?s=128',
     },
     {
       name: '野山杂货铺',
+      desc: '一个用来记录个人思绪的地方',
       link: 'https://blog.yeshan-taoist.cn',
       avatar: 'https://blog.yeshan-taoist.cn/favicon.ico',
-      desc: '一个用来记录个人思绪的地方',
     },
   ]
 }
