@@ -26,5 +26,6 @@ const { frontmatter } = useData<ThemeConfig>()
     <div v-if="frontmatter.date" class="mt-8 text-[--vp-c-text-3] text-sm">
       —— 发布于 {{ frontmatter.date }}
     </div>
+    <GiscusComment class="mt-10" />
   </div>
 </template>
