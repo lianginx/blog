@@ -128,6 +128,15 @@ function projectItems(): ProjectItem[] {
       ],
     },
     {
+      title: 'great-start',
+      description: '简约的浏览器起始页，支持时钟、天气、搜索引擎切换、书签管理，配置可远程备份至 GitHub Gist 实现多端同步。',
+      tag: '工具',
+      links: [
+        { type: 'github', url: 'https://github.com/lianginx/great-start' },
+        { type: 'home', url: 'https://great-start.vercel.app' },
+      ],
+    },
+    {
       title: 'steam-screenshot-downloader',
       description: '用于批量下载 Steam 截图的 Python 工具，支持指定用户与保存路径配置。',
       tag: '工具',
