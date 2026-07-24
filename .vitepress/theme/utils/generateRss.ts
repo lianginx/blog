@@ -53,7 +53,7 @@ ${posts.map(item => `
       <guid>${item.url}</guid>
       <pubDate>${new Date(item.frontmatter.date).toUTCString()}</pubDate>
       <description><![CDATA[${item.content}]]></description>
-    </item>`)}
+    </item>`).join('')}
   </channel>
 </rss>`
 
