@@ -2,6 +2,7 @@ import type { ThemeConfig } from '#theme/types'
 import type { SiteConfig } from 'vitepress'
 import { readdir, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { Feed } from 'feed'
 import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 
@@ -12,13 +13,10 @@ export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<
 
   // 获取文章列表
   const blogFolderPath = resolve(__dirname, '../../../docs/blog')
-  const postPaths = (await readdir(blogFolderPath))
+  const posts = (await readdir(blogFolderPath))
     .filter(fileName => fileName.endsWith('.md'))
-    .map(fileName => resolve(blogFolderPath, fileName))
-
-  // 格式化文章列表
-  const posts = postPaths
-    .map((path) => {
+    .map((fileName) => {
+      const path = resolve(blogFolderPath, fileName)
       const { data, content } = matter.read(path)
 
       const md = new MarkdownIt({ html: true, linkify: true, typographer: true })
@@ -36,39 +34,34 @@ export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<
     .sort((a, b) => +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date))
     .slice(0, 20)
 
-  // 生成 RSS XML 内容
-  const rssXML = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>${escapeXml(site.title)}</title>
-    <link>${sitemap.hostname}</link>
-    <description>${escapeXml(site.description)}</description>
-    <language>${site.lang}</language>
-    <atom:link href="${sitemap.hostname}/rss.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-${posts.map(item => `
-    <item>
-      <title>${escapeXml(item.frontmatter.title)}</title>
-      <link>${item.url}</link>
-      <guid>${item.url}</guid>
-      <pubDate>${new Date(item.frontmatter.date).toUTCString()}</pubDate>
-      <description><![CDATA[${item.content}]]></description>
-    </item>`).join('')}
-  </channel>
-</rss>`
+  // 构建 Feed XML
+  const feed = new Feed({
+    title: site.title!,
+    description: site.description!,
+    id: sitemap.hostname,
+    link: sitemap.hostname,
+    feed: new URL('/rss.xml', sitemap.hostname).href,
+    updated: new Date(),
+    author: {
+      name: 'Liang',
+      email: 'liang@in-x.cc',
+      link: sitemap.hostname,
+    },
+  })
 
-  // 写入文件
-  writeFile(resolve(outDir, 'rss.xml'), rssXML, 'utf-8')
+  for (const item of posts) {
+    feed.addItem({
+      title: item.frontmatter.title,
+      id: item.url,
+      link: item.url,
+      date: new Date(item.frontmatter.date),
+      description: item.frontmatter.description,
+      content: item.content,
+    })
+  }
 
-  // 打印日志
+  // 保存文件
+  await writeFile(resolve(outDir, 'rss.xml'), feed.atom1(), 'utf-8')
+
   logger.info('✓ generating rss...\n')
-}
-
-function escapeXml(str: string) {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;')
 }
