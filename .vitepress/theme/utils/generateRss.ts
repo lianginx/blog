@@ -35,6 +35,12 @@ export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<
     .slice(0, 20)
 
   // 构建 Feed XML
+  const author = {
+    name: 'Liang',
+    email: 'liang@in-x.cc',
+    link: sitemap.hostname,
+  }
+
   const feed = new Feed({
     title: site.title!,
     description: site.description!,
@@ -42,11 +48,7 @@ export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<
     link: sitemap.hostname,
     feed: new URL('/rss.xml', sitemap.hostname).href,
     updated: new Date(),
-    author: {
-      name: 'Liang',
-      email: 'liang@in-x.cc',
-      link: sitemap.hostname,
-    },
+    author,
   })
 
   for (const item of posts) {
@@ -54,6 +56,7 @@ export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<
       title: item.frontmatter.title,
       id: item.url,
       link: item.url,
+      author: [author],
       date: new Date(item.frontmatter.date),
       description: item.frontmatter.description,
       content: item.content,
