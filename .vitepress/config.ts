@@ -95,6 +95,15 @@ function navItems(): NavItem[] {
 function projectItems(): ProjectItem[] {
   return [
     {
+      title: 'feed',
+      description: '清爽、专注阅读的 macOS 桌面端 RSS / Atom 订阅客户端，无 RSS 的站点也能通过内置路由订阅。',
+      tag: '桌面应用',
+      links: [
+        { type: 'github', url: 'https://github.com/lianginx/feed' },
+        { type: 'home', url: 'https://github.com/lianginx/feed/releases' },
+      ],
+    },
+    {
       title: 'jd-product-unit-price',
       description: '在京东购物车页面自动识别猫粮、大米、小米等粮食类商品，并根据标题中的重量信息计算单价，便于横向比较不同商品的价格。',
       tag: '浏览器脚本',
