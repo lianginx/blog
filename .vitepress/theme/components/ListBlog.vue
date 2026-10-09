@@ -1,6 +1,6 @@
 <script lang="ts" setup name="ListBlog">
-import { useBlog } from '#composables'
 import { ChevronsDownUpIcon, CircleXIcon, SearchIcon, TagIcon, XIcon } from '@lucide/vue'
+import { useBlog } from '#composables'
 
 const props = defineProps<{
   showTitle?: boolean

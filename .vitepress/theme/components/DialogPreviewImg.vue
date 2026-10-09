@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { usePreviewImg } from '#composables'
 import { ChevronLeftIcon, ChevronRightIcon } from '@lucide/vue'
+import { usePreviewImg } from '#composables'
 
 const { currentImg, isFirst, isLast, prev, next, close } = usePreviewImg()
 </script>

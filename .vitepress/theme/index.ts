@@ -1,11 +1,11 @@
 // https://vitepress.dev/guide/custom-theme
 import type { Theme } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
 import HomeLayout from '#components/HomeLayout.vue'
 import ListBlog from '#components/ListBlog.vue'
 import ListFriends from '#components/ListFriends.vue'
 import ListPhoto from '#components/ListPhoto.vue'
 import ListProject from '#components/ListProject.vue'
-import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
 
 import './style.css'

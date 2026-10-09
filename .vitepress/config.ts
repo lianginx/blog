@@ -6,6 +6,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import AutoImportComponents from 'unplugin-vue-components/vite'
 import AutoTsconfigPath from 'vite-tsconfig-paths'
 import { defineConfigWithTheme } from 'vitepress'
+import { generateLlmsTxt } from './theme/utils/generateLlmsTxt'
+import { generateMarkdownAlternate } from './theme/utils/generateMarkdownAlternate'
 import { generateOG } from './theme/utils/generateOG'
 import { generateRss } from './theme/utils/generateRss'
 
@@ -34,6 +36,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     // Twitter Cards 默认值
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'twitter:site', content: '@Niujunliang' }],
+    // llms.txt 发现路径；文章页的 Markdown 链接在 transformPageData 里加
+    ['link', { rel: 'describedby', href: '/llms.txt' }],
   ],
   // RSS、OG/Twitter Cards，都依赖这里传递域名，不要随便删除
   sitemap: { hostname: 'https://in-x.cc' },
@@ -61,9 +65,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   },
   transformPageData(pageData, ctx) {
     generateOG(pageData, ctx)
+    generateMarkdownAlternate(pageData)
   },
   async buildEnd(siteConfig) {
     await generateRss(siteConfig)
+    await generateLlmsTxt(siteConfig)
   },
   themeConfig: {
     nav: {

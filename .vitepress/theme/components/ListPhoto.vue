@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import type { CSSProperties } from 'vue'
+import { blurhashToGradientCssObject } from '@unpic/placeholder'
 import { usePreviewImg } from '#composables'
 import { data } from '#data/photos.data'
-import { blurhashToGradientCssObject } from '@unpic/placeholder'
 
 const { show } = usePreviewImg()
 </script>

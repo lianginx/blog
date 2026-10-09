@@ -1,5 +1,5 @@
-import type { ThemeConfig } from '#theme/types'
 import type { SiteConfig } from 'vitepress'
+import type { ThemeConfig } from '#theme/types'
 import { readdir, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { Feed } from 'feed'
@@ -66,5 +66,5 @@ export async function generateRss({ site, outDir, sitemap, logger }: SiteConfig<
   // 保存文件
   await writeFile(resolve(outDir, 'rss.xml'), feed.atom1(), 'utf-8')
 
-  logger.info('✓ generating rss...\n')
+  logger.info('✓ generating rss...')
 }
