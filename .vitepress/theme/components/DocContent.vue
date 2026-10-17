@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { ThemeConfig } from '#types'
+import CopyPage from '#components/CopyPage.vue'
 
 const { frontmatter } = useData<ThemeConfig>()
 </script>
@@ -10,15 +11,20 @@ const { frontmatter } = useData<ThemeConfig>()
       <h1 class="text-balance tracking-tight">
         {{ frontmatter.title }}
       </h1>
-      <div
-        v-if="frontmatter.tags"
-        class="flex flex-wrap space-x-2 text-xs"
-      >
+      <div class="flex items-center flex-wrap gap-3">
         <div
-          v-for="tag in frontmatter.tags" :key="tag"
-          class="bg-[--vp-c-default-soft] hover:bg-[--vp-c-default-3] rd-full px-3 py-1 cursor-default"
+          v-if="frontmatter.tags"
+          class="flex flex-wrap gap-2 text-xs flex-auto"
         >
-          {{ tag }}
+          <div
+            v-for="tag in frontmatter.tags" :key="tag"
+            class="bg-[--vp-c-default-soft] hover:bg-[--vp-c-default-3] rd-full px-3 py-1 cursor-default"
+          >
+            {{ tag }}
+          </div>
+        </div>
+        <div>
+          <CopyPage />
         </div>
       </div>
     </div>
