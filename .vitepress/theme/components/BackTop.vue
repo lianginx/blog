@@ -32,7 +32,7 @@ onUnmounted(() => {
   <Transition name="back-top">
     <div
       v-show="isShow"
-      class="fixed flex justify-center items-center cursor-pointer right-8 bottom-8 size-10 rd-lg transition-colors duration-200 hover:bg-[--vp-c-default-soft] active:scale-96 will-change-transform"
+      class="floating-button fixed flex justify-center items-center cursor-pointer right-8 bottom-20 size-10 rd-lg transition-colors duration-200 active:scale-96 will-change-transform"
       role="button"
       aria-label="返回顶部"
       tabindex="0"

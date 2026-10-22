@@ -16,6 +16,7 @@ const { page, frontmatter } = useData()
       <FootBar />
       <DialogPreviewImg />
     </div>
+    <ThemeToggle />
     <BackTop />
   </div>
 </template>

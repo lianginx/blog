@@ -34,6 +34,13 @@ body {
   letter-spacing: -0.01em;
 }
 
+/* 右下角悬浮操作按钮 */
+
+.floating-button {
+  border: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg);
+}
+
 /* a */
 
 a {

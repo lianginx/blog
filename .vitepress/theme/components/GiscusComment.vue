@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import Giscus from '@giscus/vue'
+
+const { isDark } = useData()
 </script>
 
 <template>
@@ -16,7 +18,7 @@ import Giscus from '@giscus/vue'
         reactions-enabled="1"
         emit-metadata="0"
         input-position="top"
-        theme="preferred_color_scheme"
+        :theme="isDark ? 'dark' : 'light'"
         lang="zh-CN"
         loading="lazy"
       />
